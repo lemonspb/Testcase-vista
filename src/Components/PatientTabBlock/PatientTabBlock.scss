@@ -1,9 +1,34 @@
 
-
 .patient-tab-block{
     background-color: #FFFFFF;
     width: 50%;
     height: 100%;
     box-shadow: 0 1px 3px 0 rgba(38,38,38,.5);
+    .react-tabs{
+    
+    &__tab-list{
+        font-size: 20px;
+        text-transform:uppercase; 
+    }
+    &__tab{
+        padding: 10px;
+        border: none;
+        &--selected{
+            border-bottom: 2px solid #3a97c4;
+            color:#3a97c4;
+            outline: none;
+            }
+        &:focus {
+            box-shadow: none;
+            border:none;
+            border-bottom: 2px solid #3a97c4;
+          }
+          &:focus::after {
+            height: 0;
+          } 
+        
 
+    } 
+    
+}
 }
