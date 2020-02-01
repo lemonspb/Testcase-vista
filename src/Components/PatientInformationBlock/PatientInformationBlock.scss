@@ -1,0 +1,31 @@
+.patient-information-block{
+    background-color: #FFFFFF;
+    width: 50%;
+    height: 100%;
+    margin-right: 10px;
+    box-shadow: 0 1px 3px 0 rgba(38,38,38,.5);
+&__title{
+   background-color: #3A97C4; 
+   font-size: 22px;
+   color: #FFFFFF;
+   padding: 10px;
+   font-weight: 700;
+
+}
+.pacient-details{
+    padding:20px 10px;
+    &__item{
+        display: flex;
+        margin-bottom: 20px;
+        font-size: 18px; 
+
+    }
+    &__label{
+        margin-right: 10px;
+    }
+    &__output{
+        min-width: 100px;
+        border-bottom: 1px solid gray; 
+    }
+}
+}
