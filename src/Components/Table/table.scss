@@ -1,29 +1,23 @@
 table {
-    border-collapse: collapse;
-    width: 100%;
-
-  }
-   th {
-    text-align: start;
-
+  border-collapse: collapse;
+  width: 100%;
 }
-  
-  th, td {
-      font-size: 13px;
-    cursor: pointer;
-    padding: 10px;
-    text-align: start;
-    width: 33.3333%;
+
+th,
+td {
+  font-size: 13px;
+  padding: 10px;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  text-align: start;
+  width: 33.3333%;
+}
+
+tbody>tr {
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  &:hover {
+    border-left: 3px solid #3a97c4;
+    background: #d1d1d1;
   }
-  
-  
-  tr{
-      border-top: 1px solid #aaa;
-      border-bottom: 1px solid #aaa;
-    border-left:  3px solid transparent;
-    &:hover {
-        border-left: 3px solid #3a97c4;  
-        background: #d1d1d1;
-      }
-  }
-  
+}

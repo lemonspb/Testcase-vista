@@ -18,18 +18,18 @@ const reducer = (state = initialState, action) => {
     case "GET_PATIENT_ITEM":
       return {
         ...state,
-        patientItem: action.payload
+        patientItem: action.patientItem
       };
 
-    case "CHOICE_QUITTING_LIST":
+    case "SET_QUITTING_LIST":
       return {
         ...state,
-        quittingList: action.payload
+        quittingList: action.quittingList
       };
-    case "CHOICE_PRESENT_LIST":
+    case "SET_PRESENT_LIST":
       return {
         ...state,
-        presentList: action.payload
+        presentList: action.presentList
       };
 
     default: {

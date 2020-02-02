@@ -1,39 +1,37 @@
-
-.patient-tab-block{
-    background-color: #FFFFFF;
-    width: 50%;
-    height: 100%;
-    box-shadow: 0 1px 3px 0 rgba(38,38,38,.5);
-    overflow-y: scroll;
-    
-    .react-tabs{
-    
-    &__tab-list{
-        margin: 0;
-        border: none;
-        font-size: 20px;
-        text-transform:uppercase; 
+.patient-tab-block {
+  background-color: #ffffff;
+  width: 50%;
+  height: 100%;
+  box-shadow: 0 1px 3px 0 rgba(38, 38, 38, 0.5);
+  overflow-y: scroll;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+  .react-tabs {
+    &__tab-list {
+      margin: 0;
+      border: none;
+      font-size: 16px;
+      text-transform: uppercase;
+      background-color: #fafafa;
     }
-    &__tab{
-        padding: 10px;
+    &__tab {
+      padding: 13px 10px;
+      border: none;
+      &--selected {
+        transition: 500ms color ease-in-out;
+        border-bottom: 2px solid #3a97c4;
+        color: #3a97c4;
+        outline: none;
+      }
+      &:focus {
+        box-shadow: none;
         border: none;
-        &--selected{
-            transition: 500ms color ease-in-out;
-            border-bottom: 2px solid #3a97c4;
-            color:#3a97c4;
-            outline: none;
-            }
-        &:focus {
-            box-shadow: none;
-            border:none;
-            border-bottom: 2px solid #3a97c4;
-          }
-          &:focus::after {
-            height: 0;
-          } 
-        
-
-    } 
-    
-}
+        border-bottom: 2px solid #3a97c4;
+      }
+      &:focus::after {
+        height: 0;
+      }
+    }
+  }
 }

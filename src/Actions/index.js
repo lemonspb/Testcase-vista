@@ -1,20 +1,20 @@
-export const choiceQuittingList = list => {
+export const  setQuittingList = list => {
   return {
-    type: "CHOICE_QUITTING_LIST",
-    payload: list
+    type: "SET_QUITTING_LIST",
+    quittingList: list
   };
 };
 
-export const choicePresentList = list => {
+export const setPresentList = list => {
   return {
-    type: "CHOICE_PRESENT_LIST",
-    payload: list
+    type: "SET_PRESENT_LIST",
+    presentList: list
   };
 };
 
 export const getPatientItem = item => {
   return {
     type: "GET_PATIENT_ITEM",
-    payload: item
+    patientItem: item
   };
 };

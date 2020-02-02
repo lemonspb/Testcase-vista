@@ -1,35 +1,40 @@
 import React, { useEffect } from "react";
 import "./PatientTabBlock.scss";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { connect } from "react-redux";
-import { choiceQuittingList, choicePresentList } from "../../Actions";
+import { setQuittingList, setPresentList } from "../../Actions";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import Table from "../Table/Table";
 import Services from "../../Services/fetch";
+
 function PatientTabBlock(props) {
-  const services = new Services();
+
+const services = new Services();
 
   useEffect(() => {
     services.getMedList("presentList").then(list => {
-      props.choicePresentList(list);
+      props.setPresentList(list);
     });
     services.getMedList("quittingList").then(list => {
-      props.choiceQuittingList(list);
+      props.setQuittingList(list);
     });
   }, []);
 
-  console.log();
   return (
-    <div className="patient-tab-block">
+    <section className="patient-tab-block">
       <Tabs>
         <TabList>
           <Tab>
             Присутствуют({props.presentList && props.presentList.length})
           </Tab>
-          <Tab>Выбывшие({props.quittingList && props.quittingList.length})</Tab>
+          <Tab>
+            Выбывшие({props.quittingList && props.quittingList.length})
+          </Tab>
         </TabList>
         <TabPanel>
-          <Table list={props.presentList} title={props.titleTableNamePresent} />
+          <Table 
+          list={props.presentList} 
+          title={props.titleTableNamePresent} />
         </TabPanel>
         <TabPanel>
           <Table
@@ -37,7 +42,7 @@ function PatientTabBlock(props) {
             title={props.titleTableNameQuitting}/>
         </TabPanel>
       </Tabs>
-    </div>
+    </section>
   );
 }
 
@@ -56,7 +61,7 @@ const mapStateToProps = ({
 };
 
 const mapDispatchToProps = {
-  choiceQuittingList,
-  choicePresentList
+  setQuittingList,
+  setPresentList
 };
 export default connect(mapStateToProps, mapDispatchToProps)(PatientTabBlock);
