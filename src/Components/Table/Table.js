@@ -16,12 +16,15 @@ function Table(props) {
         return (
           <tr
             onClick={() => {
-               props.getPatientItem(patient);
-            }}
-          >
-            <td>{patient.firstName}</td>
-            <td>{patient.diagnosis}</td>
+              props.getPatientItem(patient);
+            }}>
             <td>{patient.historyNumber}</td>
+            <td>
+              {patient.firstName}&nbsp;{patient.lastName}&nbsp;{patient.patrName}
+            </td>
+            <td>
+              {patient.bedNumber} {patient.cause}
+            </td>
           </tr>
         );
       })}
@@ -30,6 +33,6 @@ function Table(props) {
 }
 
 const mapDispatchToProps = {
-    getPatientItem
+  getPatientItem
 };
 export default connect(null, mapDispatchToProps)(Table);

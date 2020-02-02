@@ -1,7 +1,7 @@
 table {
     border-collapse: collapse;
     width: 100%;
-    
+
   }
    th {
     text-align: start;
@@ -9,13 +9,21 @@ table {
 }
   
   th, td {
-    padding: 8px;
+      font-size: 13px;
+    cursor: pointer;
+    padding: 10px;
     text-align: start;
-
+    width: 33.3333%;
   }
   
   
-  
-  tr:hover {
-    background: #d1d1d1;
+  tr{
+      border-top: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+    border-left:  3px solid transparent;
+    &:hover {
+        border-left: 3px solid #3a97c4;  
+        background: #d1d1d1;
+      }
   }
+  
