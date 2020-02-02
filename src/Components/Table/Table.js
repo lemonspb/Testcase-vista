@@ -12,22 +12,34 @@ function Table(props) {
         <th>{props.title.column3}</th>
       </tr>
 
-      {props.list.map(patient => {
-        return (
-          <tr
-            onClick={() => {
-              props.getPatientItem(patient);
-            }}>
-            <td>{patient.historyNumber}</td>
-            <td>
-              {patient.firstName}&nbsp;{patient.lastName}&nbsp;{patient.patrName}
-            </td>
-            <td>
-              {patient.bedNumber} {patient.cause}
-            </td>
-          </tr>
-        );
-      })}
+      {props.list
+        .sort((a, b) => {
+          if (a.historyNumber > b.historyNumber) {
+            return 1;
+          }
+          if (a.historyNumber < b.historyNumber) {
+            return -1;
+          }
+          return 0;
+        })
+        .map(patient => {
+          return (
+            <tr
+              onClick={() => {
+                props.getPatientItem(patient);
+              }}
+            >
+              <td>{patient.historyNumber}</td>
+              <td>
+                {patient.firstName}&nbsp;{patient.lastName}&nbsp;
+                {patient.patrName}
+              </td>
+              <td>
+                {patient.bedNumber} {patient.cause}
+              </td>
+            </tr>
+          );
+        })}
     </table>
   );
 }

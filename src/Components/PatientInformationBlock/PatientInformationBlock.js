@@ -3,6 +3,7 @@ import "./PatientInformationBlock.scss";
 import { connect } from "react-redux";
 
 function PatientInformationBlock(props) {
+    
   function getCurrentAge(date) {
     return (
       ((new Date().getTime() - new Date(date)) / (24 * 3600 * 365.25 * 1000)) | 0);
